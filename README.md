@@ -26,7 +26,7 @@ For the full step-by-step breakdown (scripts, methods, and internals), see [`doc
 
 ```bash
 git clone https://github.com/rdAraujoV/portuguese-tokenizer.git
-cd your-repo
+cd portuguese-tokenizer
 pip install -r requirements.txt
 ```
 
@@ -51,3 +51,6 @@ Paste text into the browser UI to see the tokenization, total token count, and r
 ## Roadmap
 
 This tokenizer is a building block for a larger Small Language Model (SLM) project I'm developing for Portuguese.
+
+## License
+
