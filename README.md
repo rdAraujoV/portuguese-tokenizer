@@ -4,7 +4,7 @@ A tokenizer is the component that breaks raw text into smaller units — tokens 
 
 This project is a tokenizer built specifically for Portuguese. I focused on a single language for two reasons: Portuguese is my native language, so I have the linguistic intuition to evaluate and refine it properly, and narrowing the scope to one language makes it possible to reach higher tokenization efficiency than a general-purpose, multilingual tokenizer can achieve. By training exclusively on Portuguese text, the vocabulary can better capture the language's morphology, common word patterns, and orthography, resulting in fewer tokens per sentence and more efficient downstream processing.
 
-You can see the tokenizer running live at **[link the site]**. The image below compares its performance against a standard GPT-5 tokenizer, showing the difference in token count for equivalent Portuguese text:
+The image below compares its performance against a standard GPT-5 tokenizer, showing the difference in token count for equivalent Portuguese text:
 
 ![tokenizer_comparison](docs/images/tokenizer_comparison.png)
 
@@ -15,7 +15,7 @@ You can see the tokenizer running live at **[link the site]**. The image below c
 - **Training** — a byte-pair encoding (BPE) style algorithm iteratively merges the most frequent adjacent token pairs into a final vocabulary, with custom rules that prevent merges across punctuation or newlines.
 - **Inference** — the trained vocabulary is loaded and used to tokenize new text via a "longest match" algorithm, available both as a CLI demo and a Streamlit web app.
 
-For the full step-by-step breakdown (scripts, methods, and internals), see [`docs/ARCHITECTURE.md`](https://claude.ai/docs/ARCHITECTURE.md).
+For the full step-by-step breakdown (scripts, methods, and internals), see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## Tech Stack
 
