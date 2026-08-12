@@ -6,7 +6,7 @@ This project is a tokenizer built specifically for Portuguese. I focused on a si
 
 You can see the tokenizer running live at **[link the site]**. The image below compares its performance against a standard GPT-5 tokenizer, showing the difference in token count for equivalent Portuguese text:
 
-![tokenizer_comparison](tokenizer_comparison.png)
+![tokenizer_comparison](docs/images/tokenizer_comparison.png)
 
 ## How It Works
 
