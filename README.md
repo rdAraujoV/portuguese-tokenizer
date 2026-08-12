@@ -51,6 +51,3 @@ Paste text into the browser UI to see the tokenization, total token count, and r
 ## Roadmap
 
 This tokenizer is a building block for a larger Small Language Model (SLM) project I'm developing for Portuguese.
-
-## License
-
