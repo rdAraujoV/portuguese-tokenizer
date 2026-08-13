@@ -113,10 +113,10 @@ class PtbrTokenizer:
 
             a, b = top_pair
 
-            vocab[self.new_id] = vocab[a] + vocab[b]
-            merges[top_pair] = self.new_id
+            vocab[next_id] = vocab[a] + vocab[b]
+            merges[top_pair] = next_id
 
-            tokens = self.merge_pair(tokens, top_pair, self.new_id)
+            tokens = self.merge_pair(tokens, top_pair, next_id)
 
             # log checkpoint
             if i in checkpoints:

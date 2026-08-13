@@ -6,11 +6,11 @@ The cycle is: **Prepare Data** → **(Evaluate)** → **Train & Save Vocabulary*
 
 ## Step 1: Data Loading and Preparation (`main.py`)
 
-The entire process begins with a large amount of text, which serves as the raw material for training the tokenizer.
+The process begins with a large corpus of text, which serves as the raw material for training. To handle this efficiently without loading the entire dataset into memory, the data is streamed.
 
-1. **Loading the Dataset**: `main.py` imports `ptbr_only_dataset` from `databaseload.py`. This dataset is a collection of structured data (instructions and responses) in Portuguese.
-2. **Text Aggregation**: The script iterates through the dataset (up to 100,000 entries) and concatenates the text from the `instruction`, `input`, and `output` fields into a single, massive string variable named `text`.
-3. **Result**: At the end of this step, you have one very large string containing a representative sample of the Portuguese language the tokenizer will learn from.
+1. **Streaming the Dataset**: `main.py` imports `ptbr_only_dataset` from `databaseload.py`. This object doesn't download the dataset; instead, it's configured with `streaming=True` to fetch data on the fly. This is crucial for working with large datasets that might not fit into RAM.
+2. **On-the-Fly Aggregation**: The script iterates through the streaming dataset (up to a limit of 100,000 entries for a manageable training size) and concatenates text from the `instruction`, `input`, and `output` fields into a single, large string variable named `text`.
+3. **Result**: At the end of this step, you have one large string containing a representative sample of the Portuguese language. This was assembled piece by piece, keeping memory usage low.
 
 ## Step 2: Evaluation — Optional, but Recommended (`evaluation.py`)
 

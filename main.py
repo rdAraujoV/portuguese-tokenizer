@@ -1,6 +1,6 @@
 from src.pt_tokenizer.databaseload import ptbr_only_dataset
 from src.pt_tokenizer.evaluation import evaluate_tokenizer, plot_results
-from src.pt_tokenizer.tokenizer import train_tokenizer
+from src.pt_tokenizer.tokenizer import PtbrTokenizer
 import json
 
 texts = []
@@ -29,7 +29,8 @@ text = " ".join(texts)
 num_merges = 3500
 file_name = f"vocab_pt_br_{num_merges}.json"
 
-final_tokens, final_id_to_token, final_merges = train_tokenizer(text, num_merges)
+tokenizer = PtbrTokenizer()
+final_tokens, final_id_to_token, final_merges = tokenizer.train(text, num_merges)
 with open(file_name, "w", encoding="utf-8") as file:
     json.dump(final_id_to_token, file, ensure_ascii=False, indent=4)
 print(f"\nFinal tokenizer saved to {file_name}!")

@@ -23,7 +23,7 @@ reverse_vocab, max_token_len = load_vocab()
 st.title("🔠 Portuguese Tokenizer Visualizer")
 st.markdown("Enter text below to see how the 'Longest Match' algorithm breaks it down.")
 
-input_text = st.text_area("Input Text", "Para miletar o jogo e conseguir a platina...", height=150)
+input_text = st.text_area("Input Text", "Amanhã, talvez, o relógio comerá três nuvens roxas...", height=150)
 
 if st.button("Tokenize ✨") and reverse_vocab:
     # --- Logic ---

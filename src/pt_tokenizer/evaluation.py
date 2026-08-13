@@ -1,9 +1,10 @@
-from src.pt_tokenizer.tokenizer import train_tokenizer
+from src.pt_tokenizer.tokenizer import PtbrTokenizer
 import matplotlib.pyplot as plt
 
 def evaluate_tokenizer(text, merge_range):
-
-    history = train_tokenizer(
+    results = []
+    tokenizer = PtbrTokenizer()
+    history = tokenizer.train(
         text,
         num_merges=max(merge_range),
         checkpoints=set(merge_range)
@@ -12,7 +13,7 @@ def evaluate_tokenizer(text, merge_range):
     words = text.split()
     word_count = len(words)
 
-    results = []
+    
 
     for m, token_count, vocab_size in history:
 
